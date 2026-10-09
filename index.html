@@ -1,41 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+
+
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-</head>
 
-<body>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+    </head>
+<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-white">
 
-    <h1 class="box-decoration-slice bg-linear-to-r from-indigo-600 to-pink-500  text-white text-4xl font-bold -full flex justify-center">
-      Franz Garcia
+
+
+
+    <h1 class="text-3xl font-bold underline text-blue-700 text-center p-4">
+        Franz Melo Garcia
     </h1>
-<button class="rounded-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  justify-center" type="button ">switch</button>
-    <div id="theme-toggle" class="theme-toggle bg-gray-200 dark:bg-gray-800 p-2 rounded-full cursor-pointer">
-        <span class=" w-full flex justify-center theme-toggle__icon">🌞</span>
-        <span class=" w-full flex justify-center theme-toggle__icon">🌜</span>
+
+<div class="flex items-center justify-center p-4">
+        <button
+            id="toggledark"
+            type="button"
+            class="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-red-500 transition-colors">
+            Toggle
+        </button>
+    </div>
+
         <nav>
             
             <span>fran_zrlo</span>
         
             <ul>
-                <div class ="m-8 w-full flex justify-center bg-white lex space-x-4 text-center flex flex-row gap-4 text-center text-lg font-semibold border-2 border-gray-300 rounded-lg p-5">
+                <div class ="m-8 w-full flex justify-center bg-white lex space-x-4 text-center flex flex-row gap-4 text-center text-lg font-semibold border-2 border-gray-300 rounded-lg p-5 
+                bg-gray-300 dark:border-slate-800 dark:bg-slate-900">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-                <div 
-            </ul>
+                <li><a href="#contact">Contacts</a></li>
+                <div ></div>
+                </ul>
         </nav>
     </header>
 
     <main>
         <section id="projects" class="w-full flex justify-center">
-            <h2 class="w-150 h-50 border-5 border-indigo-300 
+            <h2 class="w-150 h-50 border-5 border-indigo-300 bg-blue-300 dark:border-slate-800 dark:bg-slate-900
                p-6 flex items-center justify-center 
                text-center text-2xl font-bold 
                bg-white rounded-lg shadow-lg mb-10"> My Projects </h2>
@@ -43,7 +58,7 @@
             </section>
 
         <section id="services" class="w-full flex justify-center">
-           <h2 class="w-150 h-50 border-5 border-indigo-300 
+           <h2 class="w-150 h-50 border-5 border-indigo-300 bg-blue-300 dark:border-slate-800 dark:bg-slate-900 
                p-5 flex items-center justify-center 
                text-center text-2xl font-bold 
                bg-white rounded-lg shadow-lg mb-10 " >My Services</h2>   
@@ -51,7 +66,7 @@
         </section>
 
 <section id="contact" class="w-full flex flex-col items-center">            
-    <h2 class="w-150 h-50 border-5 border-indigo-300 
+    <h2 class="w-150 h-50 border-5 border-indigo-300 bg-blue-300 dark:border-slate-800 dark:bg-slate-900 
                p-5 flex items-center justify-center 
                text-center text-2xl font-bold 
                bg-white rounded-lg shadow-lg ">My contacts</h2>
@@ -101,10 +116,26 @@
                    rounded-xl
                    text-black-800
                    placeholder-black-400
-                   outline-none  ">Send Message</button>
+                   outline-none  ">Send Message  </button>
+
+
             </form>
         </section>
+
+
     </main>
 
-    <!-- <script src="script.js"></script> -->
+
+   
+    <script>
+        const toggleButton = document.querySelector('#toggledark');
+        const html = document.querySelector('html');
+        toggleButton.addEventListener('click', function () {
+            html.classList.toggle('dark');
+        });
+    </script>
+
+
+
 </body>
+</hmtl>
