@@ -1,141 +1,229 @@
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Portfolio | Franz Garcia</title>
 
-
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
 
     <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *));
+
+        @layer components {
+            .card {
+                @apply rounded-xl bg-purple-100 p-6
+                dark:bg-purple-950;
+            }
+
+            .nav-link {
+                @apply rounded-md px-3 py-2 font-medium
+                hover:text-pink-500 transition;
+            }
+
+            .btn {
+                @apply inline-block rounded-lg bg-pink-500
+                px-5 py-2 font-semibold text-white
+                transition hover:bg-pink-600;
+            }
+
+            .field {
+                @apply w-full rounded-lg border border-purple-200
+                bg-white px-4 py-3 text-slate-800 outline-none
+                focus:border-pink-500 focus:ring-2 focus:ring-pink-200
+                dark:border-purple-800 dark:bg-slate-900
+                dark:text-white;
+            }
+        }
     </style>
-    </head>
-<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-white">
+</head>
 
+<body class="min-h-screen bg-blue-600 text-white dark:bg-slate-950">
 
+    <!-- NAVIGATION -->
+    <header class="mx-auto max-w-5xl px-5 py-5">
+        <nav class="flex flex-wrap items-center justify-between gap-4">
 
+            <a href="#hero" class="text-2xl font-bold">
+                <span class="text-pink-300">F</span>G.
+            </a>
 
-    <h1 class="text-3xl font-bold underline text-blue-700 text-center p-4">
-        Franz Melo Garcia
-    </h1>
+            <div class="flex flex-wrap gap-1">
+                <a href="#hero" class="nav-link">Hero</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
 
-<div class="flex items-center justify-center p-4">
-        <button
-            id="toggledark"
-            type="button"
-            class="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-red-500 transition-colors">
-            Toggle
-        </button>
-    </div>
-
-        <nav>
-            
-            <span>fran_zrlo</span>
-        
-            <ul>
-                <div class ="m-8 w-full flex justify-center bg-white lex space-x-4 text-center flex flex-row gap-4 text-center text-lg font-semibold border-2 border-gray-300 rounded-lg p-5 
-                bg-gray-300 dark:border-slate-800 dark:bg-slate-900">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contacts</a></li>
-                <div ></div>
-                </ul>
-        </nav>
+         <button id="toggledark"
+         class="btn-primary"
+        class="rounded-full border-pink-500 px-4 py-2 font-semibold text-white transition hover:bg-pink-600">
+        Toggle
+</button>
     </header>
 
-    <main>
-        <section id="projects" class="w-full flex justify-center">
-            <h2 class="w-150 h-50 border-5 border-indigo-300 bg-blue-300 dark:border-slate-800 dark:bg-slate-900
-               p-6 flex items-center justify-center 
-               text-center text-2xl font-bold 
-               bg-white rounded-lg shadow-lg mb-10"> My Projects </h2>
-                
-            </section>
+    <main class="mx-auto max-w-5xl px-5 py-8">
 
-        <section id="services" class="w-full flex justify-center">
-           <h2 class="w-150 h-50 border-5 border-indigo-300 bg-blue-300 dark:border-slate-800 dark:bg-slate-900 
-               p-5 flex items-center justify-center 
-               text-center text-2xl font-bold 
-               bg-white rounded-lg shadow-lg mb-10 " >My Services</h2>   
-           
+        <!-- HERO -->
+        <section id="hero"
+            class="mb-10 flex min-h-72 flex-col justify-center
+                   rounded-xl bg-white dark:bg-purple-950 text-purple-950 dark:text-white p-8 md:p-12">
+
+            <p class="mb-3 font-semibold text-pink-300">
+                WELCOME TO MY PORTFOLIO
+            </p>
+
+            <h1 class="text-4xl font-bold md:text-5xl">
+                Hi, I'm Franz Garcia.
+            </h1>
+
+            <h2 class="mt-3 text-xl font-semibold text-purple-500">
+                Aspiring Web Developer
+            </h2>
+
+            <p class="mt-4 max-w-xl leading-7 text-purple-800 dark:text-purple-100">
+                I am interested in technology, programming, and
+                creating simple and user-friendly websites.
+            </p>
+
+            <div class="mt-6">
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+
         </section>
 
-<section id="contact" class="w-full flex flex-col items-center">            
-    <h2 class="w-150 h-50 border-5 border-indigo-300 bg-blue-300 dark:border-slate-800 dark:bg-slate-900 
-               p-5 flex items-center justify-center 
-               text-center text-2xl font-bold 
-               bg-white rounded-lg shadow-lg ">My contacts</h2>
-               
-            <form action="#">
-                <!-- Name -->
-                
-        <label for="name"
-               class="block text-sm font-bold text-black-700 mb-2">
-            Your Name
-        </label>  <input
-            type="text1"id="name" name="name"
-            placeholder="Enter your full name"
-            required  class="w-full px-4 py-3
-                   bg-gray-50
-                   border-2 border-gray-200
-                   rounded-xl
-                   text-gray-800
-                   placeholder-gray-400
-                   outline-none">
-                <!-- Email -->
-                <label for="email" 
-                class="block text-sm font-bold text-black-700 mb-2 ">Email</label>
-                <input type="email" name="email" id="email" placeholder="Enter your email address" required  class="w-full px-4 py-3
-                   bg-gray-50
-                   border-2 border-gray-200
-                   rounded-xl
-                   text-gray-800
-                   placeholder-gray-400
-                   outline-none">
+        <!-- ABOUT -->
+        <section id="about" class="mb-10">
+            <div class="card">
+                <h2 class="text-2xl font-bold text-purple-950 dark:text-white">
+                    About Me
+                </h2>
 
-                <!-- Message -->
-                <label for="message" class="block text-sm font-bold text-black-700 mb-2">Message </label>
-                <textarea name="message" id="message" rows="5" required class="w-full px-4 py-3
-                   bg-gray-50
-                   border-2 border-black-200
-                   rounded-xl
-                   text-gray-800
-                   placeholder-gray-400
-                   outline-none"></textarea>
+                <p class="mt-4 leading-7 text-blue-950 dark:text-blue-100">
+                    My name is Franz Melo Garcia. I enjoy learning web
+                    development and improving my programming skills.
+                    I am currently learning HTML, CSS, Tailwind CSS,
+                    and JavaScript to build better websites.
+                </p>
 
-                <!-- Submit -->
-                <button type="submit"class="text-black w-full px-4 py-3
-                   font-bold
-                bg-gray-50
-                   border-2 border-gray-200
-                   rounded-xl
-                   text-black-800
-                   placeholder-black-400
-                   outline-none  ">Send Message  </button>
-
-
-            </form>
+    
+                </div>
+            </div>
         </section>
 
+        <!-- SERVICES -->
+        <section id="services" class="mb-10">
+            <div class="mb-5">
+                <h2 class="text-3xl font-bold">My Services</h2>
+                <p class="mt-2 text-blue-100">
+                    Here are some of the things I can do.
+                </p>
+            </div>
+
+            <div class="grid gap-5 md:grid-cols-3">
+
+                <article class="card">
+                    <h3 class="text-xl font-bold text-purple-950 dark:text-white">
+                        Web Design
+                    </h3>
+                    <p class="mt-3 leading-6 text-purple-950 dark:text-purple-100">
+                        Creating clean and organized website layouts.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3 class="text-xl font-bold text-purple-950 dark:text-white">
+                        UI Styling
+                    </h3>
+                    <p class="mt-3 leading-6 text-purple-950 dark:text-purple-100">
+                        Styling website colors, text, buttons, and layouts.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3 class="text-xl font-bold text-purple-950 dark:text-white">
+                        Website Development
+                    </h3>
+                    <p class="mt-3 leading-6 text-purple-950 dark:text-purple-100">
+                        Building basic websites using HTML, CSS, and JavaScript.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="mb-10">
+            <div class="card">
+                <h2 class="text-2xl font-bold text-purple-950 dark:text-white">
+                    Contact Me
+                </h2>
+
+                <p class="mt-2 mb-6 text-purple-950 dark:text-purple-100">
+                    Have a question or idea? Send me a message.
+                </p>
+
+                <form id="contact-form" class="space-y-4">
+
+                    <div>
+                        <label for="name"
+                            class="mb-2 block font-semibold text-purple-950 dark:text-white">
+                            Your Name
+                        </label>
+                        <input type="text" id="name" name="name"
+                            placeholder="Enter your name"
+                            class="field" required>
+                    </div>
+
+                    <div>
+                        <label for="email"
+                            class="mb-2 block font-semibold text-purple-950 dark:text-white">
+                            Email Address
+                        </label>
+                        <input type="email" id="email" name="email"
+                            placeholder="Enter your email"
+                            class="field" required>
+                    </div>
+
+                    <div>
+                        <label for="message"
+                            class="mb-2 block font-semibold text-purple-950 dark:text-white">
+                            Message
+                        </label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Write your message"
+                            class="field" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn w-full">
+                        Send Message
+                    </button>
+
+                    <p id="form-notice"
+                       class="text-sm text-purple-800 dark:text-pink-300"
+                       aria-live="polite"></p>
+
+                </form>
+            </div>
+        </section>
 
     </main>
 
-
-   
     <script>
+       
         const toggleButton = document.querySelector('#toggledark');
         const html = document.querySelector('html');
+
+
         toggleButton.addEventListener('click', function () {
             html.classList.toggle('dark');
+
+
+   
         });
     </script>
 
-
-
 </body>
-</hmtl>
+</html>
